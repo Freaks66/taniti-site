@@ -1,0 +1,153 @@
+/* ===== Reset / Base ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+  color: #111;
+  background: #fff;
+}
+a { color: inherit; }
+a:hover { text-decoration: underline; }
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* ===== Header / Nav ===== */
+header { border-bottom: 2px solid #000; }
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 18px;
+}
+.logo {
+  border: 2px solid #000;
+  padding: 10px 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-block;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav a {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+nav a[aria-current="page"] {
+  border-color: #000;
+}
+nav a:focus {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
+/* ===== Hero (Home) ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 18px;
+  padding: 22px 0;
+}
+.hero-image {
+  border: 2px solid #000;
+  height: 260px;
+  background: #f6f6f6;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.hero-image .xline {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  opacity: 0.5;
+  top: 50%;
+  left: 0;
+}
+.hero-image .x1 { transform: rotate(20deg); }
+.hero-image .x2 { transform: rotate(-20deg); }
+
+.hero-copy {
+  border: 2px solid #000;
+  padding: 16px;
+}
+.hero-copy h1 { margin: 0 0 10px; font-size: 32px; }
+
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 10px 0 22px;
+}
+.card {
+  border: 2px solid #000;
+  padding: 14px;
+  min-height: 130px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card .thumb {
+  border: 2px solid #000;
+  height: 34px;
+  width: 46px;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+.card h2 { margin: 0; font-size: 18px; text-align: center; }
+.card p { margin: 0; font-size: 14px; text-align: center; }
+
+/* ===== Page Layout ===== */
+.page-title {
+  margin: 22px 0 10px;
+  font-size: 30px;
+}
+.lead {
+  max-width: 70ch;
+  margin: 0 0 18px;
+}
+.section {
+  border: 2px solid #000;
+  padding: 14px;
+  margin: 0 0 16px;
+}
+.section h2 { margin: 0 0 8px; font-size: 20px; }
+
+/* ===== Travel Info (accordion) ===== */
+.faq { border: 2px solid #000; margin: 0 0 18px; }
+.faq details { border-top: 2px solid #000; padding: 12px; }
+.faq details:first-child { border-top: none; }
+.faq summary { cursor: pointer; font-weight: 700; }
+.faq p { margin: 10px 0 0; }
+
+/* ===== Footer ===== */
+footer { border-top: 2px solid #000; padding: 14px 0; font-size: 14px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero-copy h1 { font-size: 26px; }
+}
